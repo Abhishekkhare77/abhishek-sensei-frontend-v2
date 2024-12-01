@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode (Default) */
+    --background: 0 0% 100%; /* White background */
+    --foreground: 0 0% 0%; /* Black text */
+    --card: 0 0% 95%; /* Light gray card background */
+    --card-foreground: 0 0% 15%; /* Darker gray card text */
+    --popover: 0 0% 95%; /* Light gray for popovers */
+    --popover-foreground: 0 0% 15%; /* Darker gray text */
+    --primary: 0 100% 50%; /* Bright red (matching #fe0000) */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 0 0% 90%; /* Light gray for secondary elements */
+    --secondary-foreground: 0 0% 15%; /* Darker gray text */
+    --muted: 0 0% 80%; /* Lighter gray for muted elements */
+    --muted-foreground: 0 0% 50%; /* Medium gray text for muted foregrounds */
+    --accent: 0 100% 50%; /* Accent color matching primary (red) */
+    --accent-foreground: 0 0% 100%; /* White for accent foregrounds */
+    --destructive: 0 100% 50%; /* Bright red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White text */
+    --border: 0 0% 80%; /* Light gray for borders */
+    --input: 0 0% 95%; /* Light input fields */
+    --ring: 0 100% 50%; /* Red ring around focusable elements */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode */
+    --background: 0 0% 0%; /* Black background in dark mode */
+    --foreground: 0 0% 100%; /* White text in dark mode */
+    --card: 0 0% 15%; /* Dark gray cards */
+    --card-foreground: 0 0% 98%; /* Almost white text on cards */
+    --popover: 0 0% 15%; /* Dark gray popover background */
+    --popover-foreground: 0 0% 98%; /* Almost white text in popovers */
+    --primary: 0 100% 50%; /* Bright red primary color */
+    --primary-foreground: 0 0% 100%; /* White text on red */
+    --secondary: 0 0% 10%; /* Darker elements for secondary items */
+    --secondary-foreground: 0 0% 98%; /* Almost white for secondary text */
+    --muted: 0 0% 25%; /* Gray muted elements */
+    --muted-foreground: 0 0% 70%; /* Lighter gray for muted text */
+    --accent: 0 100% 50%; /* Accent color is red */
+    --accent-foreground: 0 0% 100%; /* White for accents */
+    --destructive: 0 84.2% 60.2%; /* Slightly muted red for destructive */
+    --destructive-foreground: 0 0% 98%; /* White for destructive text */
+    --border: 0 0% 15%; /* Dark gray border */
+    --input: 0 0% 15%; /* Dark input backgrounds */
+    --ring: 0 100% 50%; /* Red focus ring */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  ::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted)); /* Muted color for thumb */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid hsl(var(--background)); /* Adds space around the thumb */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--primary)); /* Primary color on hover */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--secondary)); /* Secondary color for track */
+    border-radius: 10px; /* Match thumb radius for uniformity */
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
